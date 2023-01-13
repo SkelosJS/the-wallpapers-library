@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+// React-router-dom
+import { BrowserRouter as Router, Routes as Switch, Route } from "react-router-dom";
 
-function App() {
+import { addDoc, collection } from "firebase/firestore";
+import db from "./firebaseSetup";
+
+const App = () => {
+  function handleSubmit() {
+      const ref = collection(db, 'cities');
+
+      let data = {
+        city: 'Hamburg'
+      }
+
+      try {
+        addDoc(ref, data);
+      } catch(err) {
+        console.log(err);
+      }
+  }
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Router>
+      <div>
+        <button onClick={handleSubmit}>test</button>
+      </div>
+      <Switch>
+        <Route exact path="/" element={<div>Page</div>} />
+      </Switch>
+    </Router>
+  )
 }
 
 export default App;
