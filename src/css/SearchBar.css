@@ -1,0 +1,21 @@
+.search-bar form {
+    display: flex;
+}
+.search-bar form input {
+    padding: 10px;
+    border-radius: 8px;
+    background: transparent;
+    color: #fff;
+    border: 1px solid #fff;
+    font-size: 16px;
+}
+.search-bar form button {
+    background: #D65353;
+    color: #fff;
+    border-radius: 8px;
+    padding: 10px;
+    border: 1px solid #D65353;
+    margin-left: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
