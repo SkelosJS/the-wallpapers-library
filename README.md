@@ -5,10 +5,6 @@ To get this project on your device you will need to follow the following steps :
 ### `git clone` this repository
 ### `npm install`
 
-## Development
-### `npm start`
-then open [http://localhost:3000](http://localhost:3000) in your browser
-
 ## Production
 ### `npm run build`
 you will see the build folder being created
